@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  float: left;
+}
+
+.title {
+  margin: 3%;
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.logo-title {
+  padding-left: 30%;
+  font-family: 'Cambria';
+  font-weight: bold;
+  font-size: large;
+}
+
+.content {
+  float: right;
+  margin: 10% 5% 0% 0%;
+}
+.config-btn{
+  padding: 40%;
+  border: 1px solid #cdcdcd;
+  border-radius: 7px; 
+}
+.form-field1{
+  padding: 2%;
+}
+.formData{
+padding: 0% 10%;
+}
+.config-container{
+  width:80%; 
+  float:left;
+  margin: 5%;
+}
+.config-label{
+  padding: 2% 10%;
+}
+.config-data{
+  padding: 1% 5%;
+}
+.add-btn{
+  padding: 1% 5%; 
+  margin-left: 2%;
+}
