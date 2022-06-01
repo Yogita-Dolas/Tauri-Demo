@@ -44,6 +44,6 @@ steps:
     kubernetesServiceConnection: 'React_AKS_SC'
     namespace: 'default'
     manifests: |
-      deployment.yaml
+      **/deployment.yaml
     imagePullSecrets: reactappsecret
 
