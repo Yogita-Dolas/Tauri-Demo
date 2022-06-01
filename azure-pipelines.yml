@@ -30,3 +30,20 @@ steps:
 - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
   artifact: drop
 
+- task: KubernetesManifest@0
+  displayName: Create imagePullSecret
+  inputs:
+              action: createSecret
+              secretName: reactappsecret
+              namespace: default
+              dockerRegistryEndpoint: ArgonDocker_SC
+              kubernetesServiceConnection: 'React_AKS_SC'
+- task: KubernetesManifest@0
+  inputs:
+    action: 'deploy'
+    kubernetesServiceConnection: 'React_AKS_SC'
+    namespace: 'default'
+    manifests: |
+      deployment.yaml
+    imagePullSecrets: reactappsecret
+
