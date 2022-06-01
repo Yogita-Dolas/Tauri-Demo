@@ -16,7 +16,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 
 # Tauri
 RUN cargo install tauri-bundler --force
-RUN cargo install tauri-cli --force
+RUN cargo install tauri-cli --version 1.0.0-rc.13 --force
 
 RUN npm install --unsafe-perm -g tauri
 
