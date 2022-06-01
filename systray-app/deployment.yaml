@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tauri
+  labels:
+    app: tauri-app
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3000
+    name: http
+    nodePort: 30080
+  selector:
+    app: tauri-app
+    
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tauri
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tauri-app
+  template:
+    metadata:
+      labels:
+        app: tauri-app
+    spec:
+      containers:
+      - name: tauri
+        image: reactdockerimages.azurecr.io/argonreactjsrepo:97
+        ports:
+        - containerPort: 3000
